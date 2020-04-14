@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--fonts-color);
+}
+
+ul li {
+    list-style: none;
+}
+
+/* 颜色库 */
+
+:root {
+    --fonts-color: #707070;
+    --light-color: #CCC3C3;
+}
+
+/* 字体引入 */
+
+@font-face {
+    font-family: ph;
+    src: url(../fonts/Alibaba-PuHuiTi-Medium.ttf);
+}
+
+@font-face {
+    font-family: catcafe;
+    src: url(../fonts/CatCafe.ttf);
+}
+
+@font-face {
+    font-family: gebody;
+    src: url(../fonts/Ge\ Body.ttf);
+}
+
+@font-face {
+    font-family: zh;
+    src: url(../fonts/新蒂下午茶字体基本版.ttf);
+}
+
+@font-face {
+    font-family: zh2;
+    src: url(../fonts/新蒂小丸子小学版.ttf);
+}
+
+/* 导航栏 */
+
+.head-bg {
+    height: 70px;
+    width: 100%;
+    padding: 0 51px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head-bg h2 {
+    font-family: 'zh';
+    font-size: 40px;
+    color: var(--fonts-color);
+}
+
+.head-bg ul li a {
+    font-family: 'catcafe';
+    font-size: 25px;
+    padding: 0px 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav h3 {
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 5px;
+    color: var(--fonts-color);
+    border: 1px solid var(--fonts-color);
+}
+
+/* 首页 */
+
+.main-content {
+    background-image: url(../img/fogg-no-comments.png);
+    background-position: center 85px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -70px;
+    background-size: 1300px;
+    background-repeat: no-repeat;
+}
+
+.text-content {
+    text-align: center;
+}
+
+.text-content h2 {
+    font-size: 60px;
+    margin-top: -100px;
+    font-family: 'pf';
+}
+
+.text-content h1 {
+    font-size: 120px;
+    font-family: 'catcafe';
+}
+
+.text-content a {
+    display: inline-block;
+    padding: 14px 14px;
+    font-size: 20px;
+    border-radius: 8px;
+    margin-top: 50px;
+    background-color: var(--light-color);
+}
