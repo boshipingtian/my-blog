@@ -80,7 +80,7 @@
                     <p>Hello</p>
                     <label for="email">Your Message:</label>
                     <br>
-                    <textarea name="message" id="message" value="Your Message"></textarea>
+                    <input type="text" name="message" id="word"></input>
 
                     <p>From</p>
                     <label for="name">Name:</label>
@@ -89,7 +89,7 @@
                     <label for="email">Email:</label>
                     <input type="text" name="email" value="" id="email" />
                     <br>
-                    <input type="submit" name="submit" value="Send!" />
+                    <input type="button" value="Send!" onclick=" send()" />
                 </form>
             </div>
         </div>
@@ -138,13 +138,30 @@
 
 
         localStorage.setItem('debug', 'leancloud*');
-        var blog = AV.Object.extend('blog');
-        var blog = new blog();
-        blog.set('words', 'hello world');
-        blog.set('number', 'hello world');
-        blog.save().then(function (blog) {
-            console.log('保存成功。')
-        })
+
+        // var blog = AV.Object.extend('blog');
+        // var blog = new blog();
+        // blog.set('words', 'message');
+        // blog.set('numbers', 'name');
+        // blog.save().then(function (blog) {
+        //     console.log('保存成功。')
+        //     alert("Successfully sent!")
+        // })
+        function send() {
+            var word = document.getElementById("word").value;
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var words = AV.Object.extend('words');
+            var words = new words();
+            words.set('word', word);
+            words.set('name', name);
+            words.set('email', email);
+            words.save().then(function (words) {
+                console.log('保存成功。');
+                alert("Successfully sent!");
+            })
+
+        }
     </script>
 </body>
 
