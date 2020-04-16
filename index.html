@@ -20,7 +20,9 @@
                     <li><a href="https://blog.deepdesigner.top">Blog</a></li>
                     <li><a href="">Message Slip</a></li>
                 </ul>
-                <h3>English</h3>
+                <h3>
+                    <a href="">English</a>
+                </h3>
             </div>
         </header>
     </div>
@@ -61,7 +63,7 @@
                 <h2>learning progress</h2>
             </div>
         </div>
-        
+
     </div>
     <!-- 留言板 -->
     <div class="words-bg">
@@ -72,6 +74,24 @@
         </div>
         <div class="words-content">
 
+            <div class="form-content">
+                <h1>Anything you want to say?</h1>
+                <form action="">
+                    <p>Hello</p>
+                    <label for="email">Your Message:</label>
+                    <br>
+                    <textarea name="message" id="message" value="Your Message"></textarea>
+
+                    <p>From</p>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" value="" id="name" />
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" value="" id="email" />
+                    <br>
+                    <input type="submit" name="submit" value="Send!" />
+                </form>
+            </div>
         </div>
     </div>
     <!-- in the end -->
@@ -79,34 +99,53 @@
         <h1>In the End</h1>
         <h2>Stay hungry, Stay foolish.</h2>
         <div class="end-content">
-           <ul>
-               <li>
-                   <a href="https://github.com/boshipingtian">
-                       <img src="./img/github (1).png" alt="">
-                   </a>
-               </li>
-               <li>
-                <a href="">
-                    <img src="./img/mail (1).png" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="./img/QQ (1).png" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="./img/微信.png" alt="">
-                </a>
-            </li>
-           </ul> 
+            <ul>
+                <li>
+                    <a href="https://github.com/boshipingtian">
+                        <img src="./img/github (1).png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img/mail (1).png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img/QQ (1).png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img/微信.png" alt="">
+                    </a>
+                </li>
+            </ul>
         </div>
         <div class="details">
             <h4>Illustration from <a href="https://icons8.cn">Ouch. Pics</a>. Thank you!</h4>
             <h4><a href="http://beian.miit.gov.cn">鲁ICP备19062645号</a></h4>
         </div>
     </div>
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.5.3/dist/av-min.js"></script>
+    <script>
+        var { Query, User } = AV;
+        AV.init({
+            appId: "vT1A6CwYIFxaho0E0toM90NX-gzGzoHsz",
+            appKey: "Y9ToXORjHjgRXkyAbdJPO2sc",
+            serverURL: "https://vt1a6cwy.lc-cn-n1-shared.com"
+        });
+
+
+        localStorage.setItem('debug', 'leancloud*');
+        var blog = AV.Object.extend('blog');
+        var blog = new blog();
+        blog.set('words', 'hello world');
+        blog.set('number', 'hello world');
+        blog.save().then(function (blog) {
+            console.log('保存成功。')
+        })
+    </script>
 </body>
 
 </html>
