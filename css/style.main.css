@@ -76,6 +76,7 @@ ul {
 .nav {
     display: flex;
     justify-content: space-around;
+    transition: 0.4s;
 }
 
 .nav ul {
@@ -83,16 +84,19 @@ ul {
     justify-content: space-around;
     align-items: center;
 }
+
 .nav ul li {
     padding: 0px 10px;
-    border-radius: 25px;
 }
+
 .nav ul li {
     transition: 0.3s ease-in-out;
 }
-.nav ul li:hover{
+
+.nav ul li:hover {
     transform: translateY(-5px);
 }
+
 .nav h3 {
     display: inline-block;
     padding: 8px 10px;
@@ -100,7 +104,34 @@ ul {
     color: var(--fonts-color);
     border: 1px solid var(--fonts-color);
 }
-
+.line{
+    display: none;
+    background-color: var(--fonts-color);
+    width: 20px;
+    height: 2px;
+    position: relative;
+    border-radius: 2px;
+}
+.line::before{
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0px;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--fonts-color);
+}
+.line::after{
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--fonts-color);
+}
 /* 首页 */
 
 .main-content {
@@ -113,6 +144,7 @@ ul {
     margin-top: -70px;
     background-size: 1300px;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 .text-content {
@@ -206,6 +238,7 @@ ul {
     background-size: 900px;
     position: relative;
     min-height: 100vh;
+    transition: 0.4s;
 }
 
 .words-content {
@@ -214,6 +247,7 @@ ul {
     margin: 0 auto;
     position: relative;
 }
+
 .words-content h1 {
     /* margin-top: 100px; */
     text-align: center;
@@ -221,17 +255,26 @@ ul {
     font-family: "catcafe";
 }
 
+.form-content h1 {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
 .form-content {
     position: absolute;
     width: 440px;
-    height: 300px;
+    height: 424px;
     top: 100px;
     right: 0;
+    border-radius: 25px;
+    box-shadow: 0px 0px 50px rgba(112, 112, 112, 0.3);
 }
+
 form {
     text-align: center;
 }
-form p{
+
+form p {
     font-size: 32px;
     font-family: "gebody";
 }
@@ -239,9 +282,46 @@ label {
     font-family: "ph";
 }
 
+input {
+    outline: none;
+    border: 1px solid rgba(112, 112, 112, 0.3);
+    text-indent: 5px
+}
 
+input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset !important;
+}
 
+#word {
+    width: 359px;
+    height: 66px;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
 
+#name, #email {
+    width: 300px;
+    height: 28px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+#button {
+    display: inline-block;
+    padding: 7px 13px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(112, 112, 112, 0.4);
+    cursor: pointer;
+    background-color: rgba(112, 112, 112, 0.1);
+    transition: 0.4s;
+}
+#button:hover {
+    box-shadow: 0px 10px 20px rgba(112, 112, 112, 0.3);
+    transform: translateY(-5px);
+}
 .end-bg {
     background-image: url(../img/fogg-searching-2.png);
     background-repeat: no-repeat;
@@ -251,19 +331,22 @@ label {
     min-height: 100vh;
     position: relative;
 }
+
 .end-bg h1 {
     text-align: center;
     font-size: 60px;
     line-height: 100px;
     font-family: 'catcafe';
 }
-.end-bg h2{
+
+.end-bg h2 {
     text-align: center;
     font-size: 60px;
     line-height: 100px;
     font-family: 'catcafe';
     color: var(--fonts-color);
 }
+
 .end-content {
     position: absolute;
     bottom: 140px;
@@ -271,33 +354,40 @@ label {
     transform: translateX(-50%);
 }
 
-.end-content ul{
+.end-content ul {
     display: flex;
 }
+
 .end-content ul li a {
     padding: 0px 30px;
 }
+
 .end-content ul li:nth-child(2) a img {
     width: 60px;
 }
+
 .end-content ul li a img {
     width: 50px;
     transition: 0.5s;
 }
+
 .end-content ul li a img:hover {
     transform: scale(1.2);
     /* box-shadow: 5px 0px 10px rgba(112, 112, 112, 0.4); */
 }
-.details{
+
+.details {
     position: absolute;
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%)
 }
-.details h4:nth-child(1) a{
+
+.details h4:nth-child(1) a {
     color: #9dada3;
 }
-.details h4{
+
+.details h4 {
     text-align: center;
     font-size: 20px;
     padding: 10px;

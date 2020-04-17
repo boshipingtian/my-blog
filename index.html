@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello</title>
     <link rel="stylesheet" href="./css/style.main.css">
+    <!-- change style -->
+    <link rel="stylesheet" href="./css/change.css">
+    <script src="./js/main.js"></script>
 </head>
 
 <body>
     <!-- 导航 -->
     <div>
-
         <header class="head-bg">
             <h2>博识晴天</h2>
             <div class="nav">
@@ -24,6 +26,7 @@
                     <a href="">English</a>
                 </h3>
             </div>
+            <div class="line"></div>
         </header>
     </div>
     <!-- 首页 -->
@@ -33,7 +36,7 @@
                 <h2>Hello,you will find</h2>
                 <h1>some amazing</h1>
                 <a href="">
-                    go to find
+                    Go to Find
                 </a>
             </div>
         </div>
@@ -41,7 +44,7 @@
     <!-- blog -->
     <div class="blog-bg">
         <div class="blog-header">
-            <a href="https://blog.deepdesigner.top">
+            <a href="https://blog.deepdesigner.top" target="_blank">
                 <h1>Blog ></h1>
             </a>
         </div>
@@ -89,7 +92,7 @@
                     <label for="email">Email:</label>
                     <input type="text" name="email" value="" id="email" />
                     <br>
-                    <input type="button" value="Send!" onclick=" send()" />
+                    <a id="button" onclick="send()">SEND</a>
                 </form>
             </div>
         </div>
@@ -135,32 +138,31 @@
             appKey: "Y9ToXORjHjgRXkyAbdJPO2sc",
             serverURL: "https://vt1a6cwy.lc-cn-n1-shared.com"
         });
-
-
         localStorage.setItem('debug', 'leancloud*');
-
-        // var blog = AV.Object.extend('blog');
-        // var blog = new blog();
-        // blog.set('words', 'message');
-        // blog.set('numbers', 'name');
-        // blog.save().then(function (blog) {
-        //     console.log('保存成功。')
-        //     alert("Successfully sent!")
-        // })
         function send() {
+            // 获取节点信息
             var word = document.getElementById("word").value;
             var name = document.getElementById("name").value;
             var email = document.getElementById("email").value;
-            var words = AV.Object.extend('words');
-            var words = new words();
-            words.set('word', word);
-            words.set('name', name);
-            words.set('email', email);
-            words.save().then(function (words) {
-                console.log('保存成功。');
-                alert("Successfully sent!");
-            })
-
+            if (word == '') {
+                alert("your massage is null");
+            }
+            else if (name == '') {
+                alert("your name is null");
+            }
+            else if (email == '') {
+                alert("your Email is null");
+            } else {
+                var words = AV.Object.extend('words');
+                var words = new words();
+                words.set('word', word);
+                words.set('name', name);
+                words.set('email', email);
+                words.save().then(function (words) {
+                    console.log('保存成功。');
+                    alert("Successfully sent!");
+                })
+            }
         }
     </script>
 </body>
