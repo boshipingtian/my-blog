@@ -178,7 +178,7 @@
     }
     .blog-bg {
         background-size: 500px;
-        min-height: 88vh;
+        min-height: 97vh;
     }
     .blog {
         width: 90%;
@@ -189,6 +189,9 @@
         padding: 15px;
         width: 65px;
         height: 65px;
+    }
+    .blog h2{
+        font-size: 20px;
     }
     .words-bg {
         background-size: 400px;
@@ -230,7 +233,7 @@
         background-size: 500px;
     }
     .end-content {
-        bottom: 90px;
+        bottom: 77px;
     }
     .end-content ul li a {
         padding: 0 10px;
