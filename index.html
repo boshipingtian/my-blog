@@ -11,6 +11,7 @@
     <!-- change style -->
     <link rel="stylesheet" href="./css/change.css">
     <script src="./js/main.js"></script>
+    <script src="./lib/rellax.min.js"></script>
 </head>
 
 <body>
@@ -79,7 +80,7 @@
         </div>
         <div class="words-content">
 
-            <div class="form-content">
+            <div class="form-content"   data-rellax-speed="3">
                 <h1>Anything you want to say?</h1>
                 <form action="">
                     <p>Hello</p>
@@ -134,6 +135,7 @@
     </div>
     <script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.5.3/dist/av-min.js"></script>
     <script>
+        var rellax = new Rellax(".form-content");
         var { Query, User } = AV;
         AV.init({
             appId: "vT1A6CwYIFxaho0E0toM90NX-gzGzoHsz",
