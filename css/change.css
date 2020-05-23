@@ -126,6 +126,7 @@
     }
     .words-content {
         width: 100%;
+        transform: translateX(-100px);
     }
 }
 
@@ -199,6 +200,7 @@
     .words-content {
         margin-top: 20px;
         height: 620px;
+        transform: translate(-149px, 100px);
     }
     .form-content h1 {
         font-size: 20px;
