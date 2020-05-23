@@ -179,12 +179,16 @@
     }
     .blog-bg {
         background-size: 500px;
-        min-height: 97vh;
+        min-height: 100vh;
+    }
+    .blogs{
+        margin-top: 20px;
     }
     .blog {
         width: 90%;
         height: 100px;
         border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.8)
     }
     .blog img {
         padding: 15px;
