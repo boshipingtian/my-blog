@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./css/change.css">
     <script src="./js/main.js"></script>
     <script src="./lib/rellax.min.js"></script>
+    <script src="./lib/smooth-scroll.polyfills.min.js"></script>
 </head>
 
 <body>
@@ -21,9 +22,9 @@
             <h2>博识晴天</h2>
             <div class="nav">
                 <ul>
-                    <li><a href="">Something</a></li>
-                    <li><a href="https://blog.deepdesigner.top">Blog</a></li>
-                    <li><a href="">Message Slip</a></li>
+                    <li><a data-scroll href="#blog">Something</a></li>
+                    <li><a data-scroll href="#blog">Blog</a></li>
+                    <li><a data-scroll href="#msg">Message Slip</a></li>
                 </ul>
                 <h3>
                     <a href="">English</a>
@@ -45,7 +46,7 @@
         </div>
     </div>
     <!-- blog -->
-    <div class="blog-bg">
+    <div id="blog" class="blog-bg">
         <div class="blog-header">
             <a href="https://blog.deepdesigner.top" target="_blank">
                 <h1>Blog ></h1>
@@ -72,7 +73,7 @@
 
     </div>
     <!-- 留言板 -->
-    <div class="words-bg">
+    <div id="msg" class="words-bg">
         <div class="blog-header">
             <a href="">
                 <h1>Massage Slip ></h1>
@@ -135,6 +136,7 @@
     </div>
     <script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.5.3/dist/av-min.js"></script>
     <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
         var rellax = new Rellax(".form-content");
         var { Query, User } = AV;
         AV.init({
